@@ -11,12 +11,12 @@ export default function Product() {
   const [sizeReviews, setSizeRevies] = useState([]);
 
   const getProduct = async (targetId) => {
-    const res = await instance.get(`products/${targetId}`);
+    const res = await instance.get(`/products/${targetId}`);
     const nextProduct = res.data;
     setProduct(nextProduct);
   };
   const getSizeReviews = async (targetId) => {
-    const res = await instance.get(`size_reviews/?product_id=${targetId}`);
+    const res = await instance.get(`/size_reviews/?product_id=${targetId}`);
     const nextSizeReviews = res.data.results ?? [];
     setSizeRevies(nextSizeReviews);
   };
@@ -29,7 +29,7 @@ export default function Product() {
   return (
     <div>
       <h1>{product.name}</h1>
-      <Image src={product.imgUrl} alt={product.name} />
+      <Image src={product.imgUrl} alt={product.name} width={200} height={200} />
       <SizeReviewList sizeReviews={sizeReviews} />
     </div>
   );
