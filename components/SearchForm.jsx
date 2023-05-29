@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-export default function SearchForm() {
+export default function SearchForm({ initialValue = "" }) {
   const router = useRouter();
   const [value, setValue] = useState();
   const handleChange = (e) => {
@@ -8,6 +8,10 @@ export default function SearchForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!value) {
+      router.push(`/`);
+      return;
+    }
     router.push(`/search?q=${value}`);
   };
   return (

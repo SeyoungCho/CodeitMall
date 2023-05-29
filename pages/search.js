@@ -1,3 +1,4 @@
+import SearchForm from "@/components/SearchForm";
 import { useRouter } from "next/router";
 
 export default function Search() {
@@ -6,8 +7,8 @@ export default function Search() {
   return (
     <div>
       <h1>Search 페이지</h1>
-      <h2>{q} 검색결과</h2>
-      <div>Search 페이지</div>
+      <SearchForm initialValue={q} />
+      <div>{q} 검색결과</div>
     </div>
   );
 }
