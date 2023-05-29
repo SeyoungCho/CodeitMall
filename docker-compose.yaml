@@ -1,0 +1,16 @@
+version: "3"
+services:
+  vite_docker:
+    image: node:18.16-alpine3.17
+    container_name: NextJs
+    entrypoint: tail -f
+
+    ports:
+      - 3000:3000
+    working_dir: /src/app
+    volumes:
+      - type: bind
+        source: ./
+        target: /src/app
+    tty: true
+    stdin_open: true
