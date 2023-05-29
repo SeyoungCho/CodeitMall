@@ -1,10 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
-  return <>안녕 Next.js!</>;
+  return <h1 className={styles.title}>안녕 Next.js!</h1>;
 }
